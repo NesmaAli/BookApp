@@ -8,7 +8,17 @@ var fetchAuthorData = () => {
         return [];
     }
 };
+var fetchbookData = () => {
+    try {
+        var dataString = fs.readFileSync('../Book-services/utilites/books.json');
+
+        return JSON.parse(dataString);
+    } catch (e) {
+        return [];
+    }
+};
 module.exports = {
 
-    fetchAuthorData
+    fetchAuthorData,
+    fetchbookData
 }
